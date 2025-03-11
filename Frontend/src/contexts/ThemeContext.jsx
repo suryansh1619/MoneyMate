@@ -6,7 +6,6 @@ export const ThemeContext= new createContext();
 export function ThemeProvider({ children }) {
     const [darktheme,settheme]=useState(false);
     const [loading, setLoading] = useState(true); 
-    console.log(darktheme)
     useEffect(() => {
         const fetchTheme = async () => {
             try {
@@ -30,7 +29,6 @@ export function ThemeProvider({ children }) {
         };
         fetchTheme();
     }, []);
-    console.log(darktheme)
     const changetheme = async () => {
         const newTheme=!darktheme ? "dark" : "light"; 
         settheme(!darktheme);

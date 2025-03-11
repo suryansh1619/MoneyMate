@@ -12,7 +12,7 @@ export const currencyList = [
 export const CurrencyContext = createContext();
 
 export const CurrencyProvider = ({ children }) => {
-    const [currency, setCurrency] = useState(null);
+    const [currency, setCurrency] = useState();
     const [loading, setLoading] = useState(true);
     useEffect(() => {
         const fetchCurrency = async () => {
