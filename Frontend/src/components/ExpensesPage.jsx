@@ -94,17 +94,17 @@ const ExpensesPage = () => {
           <p className="text-gray-400">{filteredExpenses.length} transactions</p>
         </div>
       </div>
-      <div className="p-6 rounded-xl shadow-md" style={{ background: themeStyles.cardBg }}>
+      <div className="p-4 md:pd-6 rounded-xl shadow-md" style={{ background: themeStyles.cardBg }}>
         <h2 className="text-xl font-semibold mb-2">Expense Entries</h2>
         <p className="mb-4">A detailed list of all your expenses</p>
         <div className="overflow-x-auto">
-          <table className="w-full border-collapse">
+          <table className="w-full border-collapse text-sm sm:text-base">
             <thead>
               <tr style={{ background: themeStyles.tableHeader }}>
-                <th className="p-4 text-left border-b font-semibold">Description</th>
-                <th className="p-4 text-left border-b font-semibold">Category</th>
-                <th className="p-4 text-left border-b font-semibold">Date</th>
-                <th className="p-4 text-left border-b font-semibold">Amount</th>
+                <th className="p-4 text-left border-b font-semibold whitespace-nowrap">Description</th>
+                <th className="p-4 text-left border-b font-semibold whitespace-nowrap">Category</th>
+                <th className="p-4 text-left border-b font-semibold whitespace-nowrap">Date</th>
+                <th className="p-4 text-left border-b font-semibold whitespace-nowrap">Amount</th>
               </tr>
             </thead>
             <tbody>
@@ -113,10 +113,10 @@ const ExpensesPage = () => {
                   <tr key={expense.id}
                     className={`border-b transition ${index % 2 === 0 ? "bg-opacity-10" : "bg-opacity-20"}`}
                     style={{ background: themeStyles.hoverBg }}>
-                    <td className="p-4">{expense.description}</td>
-                    <td className="p-4">{expense.category}</td>
-                    <td className="p-4">{new Date(expense.date).toLocaleDateString()}</td>
-                    <td className="p-4 font-bold text-red-500">{currency.symbol}  {expense.amount.toFixed(2)}</td>
+                    <td className="p-4 whitespace-nowrap">{expense.description}</td>
+                    <td className="p-4 whitespace-nowrap">{expense.category}</td>
+                    <td className="p-4 whitespace-nowrap">{new Date(expense.date).toLocaleDateString()}</td>
+                    <td className="p-4 whitespace-nowrap font-bold text-red-500">{currency.symbol}  {expense.amount.toFixed(2)}</td>
                   </tr>
                 ))
               ) : (

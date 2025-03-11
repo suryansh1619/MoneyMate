@@ -176,24 +176,24 @@ const Dashboard = () => {
         className="text-2xl font-bold mb-2 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
         Financial Dashboard</h1>
       <p className="text-lg leading-relaxed">Track income, expenses, and budgets in one place.</p>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-4 mt-6">
         {[
           { label: "Total Income", value: summary.totalIncome, color: "text-green-500", icon: <ArrowUp size={20} /> },
           { label: "Total Expenses", value: summary.totalExpenses, color: "text-red-500", icon: <ArrowDown size={20} /> },
           { label: "Net Balance", value: summary.balance, color: summary.balance >= 0 ? "text-green-500" : "text-red-500", icon: summary.balance >= 0 ? <ArrowUp size={20} /> : <ArrowDown size={20} /> },
           { label: "Budget Used", value: `${((summary.budgetUtilization.used / summary.budgetUtilization.total) * 100).toFixed(1) || 0}%`, color: "text-gray-500", icon: <PiggyBank size={20} /> },
         ].map((item, index) => (
-          <div key={index} className="p-6 rounded-xl shadow-md border transition duration-200 hover:-translate-y-1 hover:shadow-lg"
+          <div key={index} className="p-4 md:p-6 rounded-xl shadow-md border transition duration-200 hover:-translate-y-1 hover:shadow-lg"
             style={{ background: themeStyles.cardBg, borderColor: themeStyles.border }}>
             <h3 className="mb-2">{item.label}</h3>
-            <p className={`text-2xl font-semibold ${item.color}`}>{currency.symbol} {item.value.toLocaleString()}</p>
+            <p className={`text-xl md:text-2xl font-semibold ${item.color}`}>{currency.symbol} {item.value.toLocaleString()}</p>
             <p className="flex items-center gap-2 text-sm mt-2">{item.icon} This Month</p>
           </div>
         ))}
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
         <div 
-          className="p-6 rounded-xl shadow-md" 
+          className="p-4 md:p-6 rounded-xl shadow-md" 
           style={{ background: themeStyles.cardBg }}>
           <h2>Income vs Expenses</h2>
           <div 
@@ -203,7 +203,7 @@ const Dashboard = () => {
                 options={barChartOptions} /></div>
         </div>
         <div 
-          className="p-6 rounded-xl shadow-md" 
+          className="p-4 md:p-6 rounded-xl shadow-md" 
           style={{ background: themeStyles.cardBg }}>
           <h2>Expense Breakdown</h2>
           <div 
@@ -214,29 +214,29 @@ const Dashboard = () => {
         </div>
       </div>
       <div 
-        className="p-6 rounded-xl shadow-md mt-12" 
+        className="p-4 md:p-6 rounded-xl shadow-md mt-8" 
         style={{ background: themeStyles.cardBg }}>
-        <h2 className="text-xl font-semibold">Recent Transactions</h2>
+        <h2 className="text-xl font-semibold ">Recent Transactions</h2>
         {transactions.length === 0 ? (
           <p className="text-center py-4">No recent transactions.</p>
         ) : (
           <div className="overflow-x-auto">
-            <table className="w-full border-collapse mt-4">
+            <table className="w-full border-collapse mt-4 text-sm sm:text-base">
               <thead>
                 <tr style={{ background: themeStyles.tableHeader }}>
-                  <th className="p-4 text-left border-b font-semibold">Date</th>
-                  <th className="p-4 text-left border-b font-semibold">Description</th>
-                  <th className="p-4 text-left border-b font-semibold">Category</th>
-                  <th className="p-4 text-left border-b font-semibold">Amount</th>
+                  <th className="p-4 text-left border-b font-semibold whitespace-nowrap">Date</th>
+                  <th className="p-4 text-left border-b font-semibold whitespace-nowrap">Description</th>
+                  <th className="p-4 text-left border-b font-semibold whitespace-nowrap">Category</th>
+                  <th className="p-4 text-left border-b font-semibold whitespace-nowrap">Amount</th>
                 </tr>
               </thead>
               <tbody>
                 {transactions.map(transaction => (
                   <tr key={transaction.id} className="border-b">
-                    <td className="p-4">{new Date(transaction.date).toLocaleDateString()}</td>
-                    <td className="p-4">{transaction.description}</td>
-                    <td className="p-4">{transaction.category}</td>
-                    <td className={`p-4 font-semibold ${transaction.type === "expense" ? "text-red-500" : "text-green-500"}`}>{currency.symbol} {transaction.amount.toFixed(2)}</td>
+                    <td className="p-4 whitespace-nowrap">{new Date(transaction.date).toLocaleDateString()}</td>
+                    <td className="p-4 whitespace-nowrap">{transaction.description}</td>
+                    <td className="p-4 whitespace-nowrap">{transaction.category}</td>
+                    <td className={`p-4 font-semibold whitespace-nowrap ${transaction.type === "expense" ? "text-red-500" : "text-green-500"}`}>{currency.symbol} {transaction.amount.toFixed(2)}</td>
                   </tr>
                 ))}
               </tbody>

@@ -183,7 +183,7 @@ const BudgetDetailsPage = () => {
         </button>
       </div>
       <h1 className="text-3xl font-bold mb-5">{budget.emoji} {budget.name} Budget</h1>
-      <div className="grid grid-cols-3 gap-5">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
         {[
           { label: "Total Budget", value: budget.amount, bg: themeStyles.cardBg },
           { label: "Spent", value: totalSpent, bg: "bg-red-500 text-white" },

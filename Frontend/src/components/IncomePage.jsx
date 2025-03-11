@@ -164,28 +164,28 @@ const IncomePage = () => {
           ))}
         </select>
       </div>
-      <div className="p-6 rounded-xl shadow-md" style={{ background: themeStyles.cardBg }}>
+      <div className="p-4 md:p-6 rounded-xl shadow-md" style={{ background: themeStyles.cardBg }}>
         <h2 className="text-xl font-semibold mb-4">Income Entries</h2>
         <div className="overflow-x-auto">
-          <table className="w-full border-collapse">
+          <table className="w-full border-collapse text-sm sm:text-base">
             <thead>
               <tr style={{ background: themeStyles.tableHeader }}>
-                <th className="p-4 text-left border-b font-semibold">Date</th>
-                <th className="p-4 text-left border-b font-semibold">Source</th>
-                <th className="p-4 text-left border-b font-semibold">Category</th>
-                <th className="p-4 text-left border-b font-semibold">Amount</th>
-                <th className="p-4 text-left border-b font-semibold">Actions</th>
+                <th className="p-4 text-left border-b font-semibold whitespace-nowrap">Date</th>
+                <th className="p-4 text-left border-b font-semibold whitespace-nowrap">Source</th>
+                <th className="p-4 text-left border-b font-semibold whitespace-nowrap">Category</th>
+                <th className="p-4 text-left border-b font-semibold whitespace-nowrap">Amount</th>
+                <th className="p-4 text-left border-b font-semibold whitespace-nowrap">Actions</th>
               </tr>
             </thead>
             <tbody>
               {filteredIncomes.length > 0 ? (
                 filteredIncomes.map((income, index) => (
                   <tr key={income.id} className="border-b transition" style={{ background: index % 2 === 0 ? themeStyles.hoverBg : "transparent" }}>
-                    <td className="p-4">{new Date(income.date).toLocaleDateString()}</td>
-                    <td className="p-4">{income.source}</td>
-                    <td className="p-4">{income.category}</td>
-                    <td className="p-4 font-bold text-green-500">{currency.symbol} {income.amount.toFixed(2)}</td>
-                    <td className="p-4">
+                    <td className="p-4 whitespace-nowrap">{new Date(income.date).toLocaleDateString()}</td>
+                    <td className="p-4 whitespace-nowrap">{income.source}</td>
+                    <td className="p-4 whitespace-nowrap">{income.category}</td>
+                    <td className="p-4 whitespace-nowrap font-bold text-green-500">{currency.symbol} {income.amount.toFixed(2)}</td>
+                    <td className="p-4 whitespace-nowrap">
                       <Edit onClick={() => handleEditIncome(income)} className="text-blue-500 cursor-pointer mr-2" />
                       <Trash2 onClick={() => handleDeleteIncome(income.id)} className="text-red-500 cursor-pointer" />
                     </td>
