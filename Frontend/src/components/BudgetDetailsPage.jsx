@@ -5,7 +5,7 @@ import { Trash, PlusCircle } from "lucide-react";
 import API_BASE_URL from "../config";
 import AddTransactionDialog from "./AddTransactionDialog";
 import { ThemeContext } from "../contexts/ThemeContext";
-import { CurrencyContext } from "../contexts/Currencycontext";
+import { CurrencyContext } from "../contexts/CurrencyContext";
 import convertCurrency from "../convertCurrency";
 import MessageDialog from "./MessageDialog";
 import {useConfirmDialog} from "./ConfirmDialog";

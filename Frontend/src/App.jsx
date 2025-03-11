@@ -12,7 +12,7 @@ import ProtectedLayout from "./components/ProtectedLayout";
 import Sidebar from "./components/Sidebar";
 import BudgetDetailsPage from "./components/BudgetDetailsPage";
 import { ThemeProvider, ThemeContext } from "./contexts/ThemeContext";
-import {CurrencyProvider} from "./contexts/Currencycontext";
+import {CurrencyProvider} from "./contexts/CurrencyContext";
 
 const AppContent = () => {
   const { darktheme } = useContext(ThemeContext);

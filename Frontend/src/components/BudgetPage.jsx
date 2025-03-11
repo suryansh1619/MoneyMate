@@ -5,7 +5,7 @@ import { MoreVertical, Edit, Trash } from "lucide-react";
 import CreateBudgetDialog from "./CreateBudgetDialog";
 import API_BASE_URL from "../config";
 import { ThemeContext } from "../contexts/ThemeContext";
-import { CurrencyContext} from "../contexts/Currencycontext";
+import { CurrencyContext} from "../contexts/CurrencyContext";
 import convertCurrency from "../convertCurrency";
 import {useConfirmDialog} from "./ConfirmDialog";
 

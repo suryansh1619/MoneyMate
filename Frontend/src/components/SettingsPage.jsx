@@ -4,7 +4,7 @@ import {Trash2, Lock, User, Sun, Moon, LockKeyhole, SunMoon, TriangleAlert} from
 import axios from "axios";
 import API_BASE_URL from "../config";
 import { ThemeContext } from "../contexts/ThemeContext";
-import { CurrencyContext } from "../contexts/Currencycontext";
+import { CurrencyContext } from "../contexts/CurrencyContext";
 import MessageDialog from "./MessageDialog";
 import {useConfirmDialog} from "./ConfirmDialog";
 

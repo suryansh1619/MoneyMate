@@ -4,7 +4,7 @@ import { Plus, Edit, Trash2 } from "lucide-react";
 import API_BASE_URL from "../config";
 import AddIncomeDialog from "./AddIncomeDialog"; 
 import { ThemeContext } from "../contexts/ThemeContext";
-import { CurrencyContext } from "../contexts/Currencycontext";
+import { CurrencyContext } from "../contexts/CurrencyContext";
 import convertCurrency from "../convertCurrency";
 import {useConfirmDialog} from "./ConfirmDialog";
 

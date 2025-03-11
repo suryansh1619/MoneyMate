@@ -3,7 +3,7 @@ import axios from "axios";
 import { CreditCard } from "lucide-react";
 import API_BASE_URL from "../config";
 import { ThemeContext } from "../contexts/ThemeContext";
-import { CurrencyContext } from "../contexts/Currencycontext";
+import { CurrencyContext } from "../contexts/CurrencyContext";
 import convertCurrency from "../convertCurrency";
 const ExpensesPage = () => {
   const { darktheme } = useContext(ThemeContext);
