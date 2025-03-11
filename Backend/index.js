@@ -15,8 +15,7 @@ const themeRoutes = require('./routes/themeRoutes')
 const currencyRoutes = require('./routes/currencyRoutes')
 
 app.use(cors({
-  // origin: ["https://money-mate-rho.vercel.app", "http://localhost:5173"],
-  origin: "*",
+  origin: ["https://money-mate-rho.vercel.app", "http://localhost:5173"],
   methods: "GET,POST,PUT,DELETE,OPTIONS",
   allowedHeaders: "Content-Type,Authorization",
   credentials: true
