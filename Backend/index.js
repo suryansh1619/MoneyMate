@@ -13,7 +13,6 @@ const incomeRoutes = require("./routes/incomeRoutes");
 const transactionRoutes = require("./routes/transactionRoutes");
 const themeRoutes = require('./routes/themeRoutes')
 const currencyRoutes = require('./routes/currencyRoutes')
-const chatbotRoutes = require('./routes/chatbotRoutes')
 
 app.use(cors({
   origin: ["https://budgethub.vercel.app", "http://localhost:5173"],
@@ -38,7 +37,6 @@ app.use("/income", incomeRoutes);
 app.use("/transaction", transactionRoutes);
 app.use("/theme", themeRoutes);
 app.use("/currency", currencyRoutes);
-app.use("/chatbot", chatbotRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, '0.0.0.0', () => {
