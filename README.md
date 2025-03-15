@@ -43,7 +43,7 @@ The app is designed to be **secure, fast, and mobile-friendly**, ensuring users 
 ### **Backend**
 - **Node.js + Express** 
 - **Prisma ORM** (Database handling)
-- **PostgreSQL (Hosted on Render)** 🗄️
+- **PostgreSQL (Hosted on Render)**
 - **JWT Authentication** 
 - **CORS & Middleware Security**
   
